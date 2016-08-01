@@ -2,98 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>智能社—http://www.zhinengshe.com</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <title>哈弄弄</title>
+    <script src="js/zepto.js"></script>
+    <script src="js/touch.js"></script>
     <style>
-        .box{
-            width:300px;
-            height:300px;
-            border: 1px solid #000;
-            background: #ccc;
-            border-radius: 50%;
-            box-shadow:inset 0 0 5px #000;
-            position: absolute;
-            left:100px;
-            top:100px;
-        }
-        .cap{
-            width:20px;
-            height:20px;
-            background: -webkit-radial-gradient(#ccc,#000);
-            position: absolute;
-            left:50%;
-            top:50%;
-            margin: -10px 0 0 -10px;
-            border-radius: 50%;
-        }
-        .box div{
-            transform-origin: bottom center;
-        }
-        .hour{
-            width:14px;
-            height:80px;
-            background: #000;
-            position: absolute;
-            left:50%;
-            top:50%;
-            margin-left: -7px;
-            margin-top: -80px;
-            border-radius: 50% 50% 0 0;
-        }
-        .min{
-            width:10px;
-            height:100px;
-            background: #000;
-            position: absolute;
-            left:50%;
-            top:50%;
-            margin-left: -5px;
-            margin-top: -100px;
-            border-radius: 50% 50% 0 0;
-        }
-        .sec{
-            width:2px;
-            height:120px;
-            background: #f00;
-            position: absolute;
-            left:50%;
-            top:50%;
-            margin-left: -1px;
-            margin-top: -120px;
-        }
+        #items { width:200px;height:200px;background:red;}
     </style>
-    <script>
-        window.onload=function(){
-            var oDiv=document.querySelector('.box');
-            var oH=document.querySelector('.hour');
-            var oM=document.querySelector('.min');
-            var oS=document.querySelector('.sec');
-
-            function tick(){
-                var oDate=new Date();
-                var h=oDate.getHours();
-                var m=oDate.getMinutes();
-                var s=oDate.getSeconds();
-                var ms=oDate.getMilliseconds();
-
-                oH.style.transform='rotate('+(h*30+m/60*30)+'deg)';
-                oM.style.transform='rotate('+(m*6+s/60*6)+'deg)';
-                oS.style.transform='rotate('+(s*6+ms/1000*6)+'deg)';
-            }
-            tick();
-            setInterval(tick,30);
-        };
-    </script>
 </head>
 <body>
-    <div class="box">
-        <div class="hour"></div>
-        <div class="min"></div>
-        <div class="sec"></div>
-        <div class="cap"></div>
-    </div>
+<div id="items">
+
+</div>
+
+<script>
+    $('#items').on("tap",function(ev){
+       alert(1);
+        ev.stopPropagation();
+    })
+
+</script>
 </body>
 </html>
-
-
-
-
